@@ -7,12 +7,13 @@ body {
 }
 
 input, button {
-    padding: 5px 0;
+    padding: 7px 5px;
     margin: 5px;
 }
 
 .container {
     background-color: #a8dadc;
+    height: 100%;
     color: white;
     display: flex;
     flex-direction: column;
@@ -22,19 +23,32 @@ input, button {
 }
 
 .top-container {
-    background-color: #1d3557;
-    padding: 20px;
+    background-color: #5aa5c5;
+    padding: 10px;
     border-radius: 5px;
     width: 80%;
-    margin: 20px;
+    margin: 15px 20px 5px;
     display: flex;
     justify-content: space-between;
+    align-items: center;
+    box-shadow: 7px 7px 10px 0px rgba(0, 0, 0, 0.7);
+}
+
+.left {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex: 1.1;
+}
+
+.right {
+    display: flex;
+    justify-content: center;
     align-items: center;
 }
 
 .top-container:hover, .bottom-container:hover {
-    transform: scaleX(1.3);
-    transform: scaleY(1.05);
+    transform: scale(1.05);
 }
 
 .radio-container {
@@ -44,15 +58,16 @@ input, button {
 }
 
 .bottom-container {
-    background-color: #1d3557;
-    padding: 20px;
-    border-radius: 5px;
+    background-color: #2b6896;
+    padding: 10px;
+    border-radius: 5px 2px;
     width: 80%;
-    margin: 20px;
+    margin: 15px 20px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
+    box-shadow: 7px 7px 10px 0px rgba(0, 0, 0, 0.7);
 }
 
 .top {
@@ -63,19 +78,55 @@ input, button {
     padding: 5px 10px;
 }
 
-input {
-    width: 40%;
+.input {
+    border: none;
+    border-radius: 3px;
+}
+
+button {
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+#delete, #add-general {
+    background-color: red;
+    color: white;
+}
+
+#add-specific {
+    background-color: #2b6896;
+    color: white;
+}
+
+#search {
+    background-color: #5aa5c5;
+}
+
+.top-container input {
+    width: 50%;
+}
+
+.bottom-container input {
+    width: 25%;
+}
+
+.bottom-container input:focus {
+    outline: none;
+    width: 70%;
 }
 
 hr {
-    border: 2px solid rgba(180, 180, 180, 0.7);
-    width: 90%;
-    margin-top: 20px;
+    border: 2px solid rgba(30, 30, 30, 0.7);
+    width: 100%;
+    margin-top: 10px;
+    box-shadow: 0px 3px 10px 0px rgba(0, 0, 0, 0.7);
+
 
 }
 
 .bottom {
-    width: 90%;
+    width: 98%;
     display: flex;
     align-items: top;
     justify-content: space-between;
@@ -85,38 +136,71 @@ hr {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    padding: 10px;
-    margin: 10px;
     width: 30%;
     height: fit-content;
 }
 
+h3 {
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+}
+
 .list {
-    background-color: black;
+    background-color: rgb(46, 212, 57);
+    border: 1px solid white;
+    border-radius: 5px;
+    box-shadow: 7px 7px 10px 0px rgba(0, 0, 0, 0.7);
+    min-height: 20px;
 }
 
 .list-item {
     width: 90%;
-    padding: 3px;
+    padding: 3px 7px;
     margin: 10px auto 20px;
+    border-radius: 5px;
 }
 
 .list-item:hover{
     cursor: pointer;
+    box-shadow: 7px 7px 10px 0px rgba(0, 0, 0, 0.7);
 }
 
-#fruits-list > .list-item {
-    background-color: rgb(180,0,0);
+.p {
+    font-weight: bold;
 }
 
-#general-list > .list-item {
-    background-color: rgb(0,180,0);
+.list-item:hover .p {
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
 }
 
-#legumes-list > .list-item {
-    background-color: rgb(0,0,180);
+.fruity {
+    background-color: rgb(200,255,200);
+}
+
+.fruity .p {
+    color: rgb(5, 50, 5);
+}
+
+.all {
+    background-color: rgb(200,255,255);
+}
+
+.all .p {
+    color: rgb(5, 50, 50);
+}
+
+.veggy {
+    background-color: rgb(255,255,200);
+}
+
+.veggy .p {
+    color: rgb(72, 58, 7);
 }
 
 .highlight {
-    background-color: blueviolet;
+    background-color: rgb(200, 20, 20);
+    border: 1px solid white;
+}
+
+.highlight .p {
+    color: white;
 }

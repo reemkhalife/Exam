@@ -1,3 +1,5 @@
+// ADDING ITEMS TO LISTS
+
 document.getElementById('add-specific').addEventListener('click', addSpecific);
 document.getElementById('add-general').addEventListener('click', addGeneral);
 
@@ -24,8 +26,10 @@ function addSpecific() {
     
             const listItem = document.createElement('div');
             listItem.className = 'list-item';
+            listItem.classList.add('fruity');
     
             const ptext = document.createElement('p');
+            ptext.className = 'p';
             ptext.textContent = "Fruits! - " + newItem;
     
             listItem.appendChild(ptext);
@@ -37,8 +41,10 @@ function addSpecific() {
     
             const listItem = document.createElement('div');
             listItem.className = 'list-item';
+            listItem.classList.add('veggy');
     
             const ptext = document.createElement('p');
+            ptext.className = 'p';
             ptext.textContent = "Legumes! - " + newItem;
     
             listItem.appendChild(ptext);
@@ -74,9 +80,10 @@ function addGeneral() {
     
             const listItem = document.createElement('div');
             listItem.className = 'list-item';
+            listItem.classList.add('all');
     
             const ptext = document.createElement('p');
-            ptext.className = 'list-item';
+            ptext.className = 'p';
             ptext.textContent = "Fruits! - " + newItem;
     
             listItem.appendChild(ptext);
@@ -88,8 +95,10 @@ function addGeneral() {
     
             const listItem = document.createElement('div');
             listItem.className = 'list-item';
+            listItem.classList.add('all');
     
             const ptext = document.createElement('p');
+            ptext.className = 'p';
             ptext.textContent = "Legumes! - " + newItem;
     
             listItem.appendChild(ptext);
@@ -101,6 +110,8 @@ function addGeneral() {
         alert("Please make sure that you enter all the details");
     }    
 }
+
+// SEARCHING FOR ITEMS
 
 document.getElementById('search').addEventListener('click', searchItem);
 
@@ -115,30 +126,63 @@ function searchItem() {
 
     items.forEach(item => {
         const itemContent = item.textContent.toLowerCase();
+        const parent = item.parentNode;
         if (itemContent.includes(newItem)) {
-            item.classList.add('highlight');
+            parent.classList.add('highlight');
         } else {
-            item.classList.remove('highlight');
+            parent.classList.remove('highlight');
         }
     });
     
 }
-const item = document.getElementsByClassName('list-item');
 
-item.addEventListener('click', function (){
-    alert("you clicked");
-    const parent = document.parentNode;
-    const parentClassList = parent.classList;
-    if (parentClassList ==='general-list') {
+// DELETING ITEMS
+
+document.getElementById('delete').addEventListener('click', deleteItem);
+
+function deleteItem() {
+    const newItemtInput = document.getElementById('item-search');
+    const newItem = newItemtInput.value.trim();
+    
+    if (newItem ===''){
+        return;
+    }
+    const items = document.querySelectorAll('.p');
+
+    items.forEach(item => {
+        const itemContent = item.textContent.toLowerCase();
+        const parent = item.parentNode;
+        const grandparent = parent.parentNode;
+        if (itemContent.includes(newItem)) {
+            grandparent.removeChild(parent);
+        }
+    });
+    
+}
+
+// FILTERING ITEMS IN GENERAL LIST
+
+const itemList = document.querySelectorAll('.list-item');
+
+itemList.forEach(item => {
+    item.addEventListener('click', function (){
+    const parent = item.parentNode;
+    const parentIdName = parent.id;
+    if (parentIdName ==='general-list') {
         const family = item.textContent.split('! - ')[0];
         const fruitsList = document.getElementById('fruits-list');
         const legumesList = document.getElementById('legumes-list');
         if (family === 'Fruits') {
+            item.classList.remove('all');
+            item.classList.add('fruity');
             fruitsList.appendChild(item);
         } else if (family === 'Legumes') {
+            item.classList.remove('all');
+            item.classList.add('veggy');
             legumesList.appendChild(item);
         }
     }
-    
+    });
 });
+
     

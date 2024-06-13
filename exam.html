@@ -10,45 +10,49 @@
 <body>
     <div class="container">
         <div class="top-container">
-            <input type="text" id="item-input" placeholder="Fruits or Legumes">
-            <div class="radio-container">
-                <input type="radio" id="fruits" name="type" value="fruits">
-                <label for="fruits">Fruits</label>
-                <input type="radio" id="legumes" name="type" value="legumes">
-                <label for="legumes">Legumes</label>
+            <div class="left">
+                <input type="text" class="input" id="item-input" placeholder="Fruits or Legumes">
+                <div class="radio-container">
+                    <input type="radio" id="fruits" name="type" value="fruits">
+                    <label for="fruits">Fruits</label>
+                    <input type="radio" id="legumes" name="type" value="legumes">
+                    <label for="legumes">Legumes</label>
+                </div>
             </div>
-            <button class="add-specific" id ="add-specific">Add to specific list</button>
-            <button class="add-general" id="add-general">Add to general list</button>
+            <div class="right">
+                <button class="add-specific" id ="add-specific">Add to specific list</button>
+                <button class="add-general" id="add-general">Add to general list</button>
+            </div>
         </div>
         <div class="bottom-container">
             <div class="top">
                 <button class="search" id="search">Search for an item</button>
-                <button class="delete">Delete an item</button>
-                <input type="text" id="item-search" placeholder="Search for Fruits or Legumes"/>
+                <button class="delete" id="delete">Delete an item</button>
+                <input type="text" class="input" id="item-search" placeholder="Search for Fruits or Legumes"/>
             </div>
             <hr/>
             <div class="bottom">
                 <div class="list-container">
                     <div class="title"><h3>List of Fruits</h3></div>
                     <div class="list" id="fruits-list">
-                        <div class="list-item"  ><p class="p">Fruits! - Apple</p></div>
-                        <div class="list-item"  ><p class="p">Fruits! - Mangoes</p></div>
+                        <div class="list-item fruity"  ><p class="p">Fruits! - Apple</p></div>
+                        <div class="list-item fruity"  ><p class="p">Fruits! - Mangoes</p></div>
                     </div>
                 </div>
                 <div class="list-container">
                     <div class="title"><h3>List of Fruits & Legumes</h3></div>
                     <div class="list" id="general-list">
-                        <div class="list-item"><p class="p">Fruits! - Pinapples</p></div>
-                        <div class="list-item" ><p class="p">Fruits! - Bananas</p></div>
-                        <div class="list-item"  ><p class="p">Legumes! - Potato</p></div>
-                        <div class="list-item" ><p class="p">Legumes! - Lentils</p></div>
+                        <div class="list-item all"><p class="p">Fruits! - Pinapples</p></div>
+                        <div class="list-item all" ><p class="p">Fruits! - Bananas</p></div>
+                        <div class="list-item all"  ><p class="p">Legumes! - Potato</p></div>
+                        <div class="list-item all" ><p class="p">Legumes! - Lentils</p></div>
                     </div>
                 </div>
                 <div class="list-container">
                     <div class="title"><h3>List of Legumes</h3></div>
                     <div class="list" id="legumes-list">
-                        <div class="list-item"  ><p class="p">Legumes! - Broccoli</p></div>
-                        <div class="list-item"  ><p class="p">Legumes! - Green Beans</p></div>
+                        <div class="list-item veggy"  ><p class="p">Legumes! - Broccoli</p></div>
+                        <div class="list-item veggy"  ><p class="p">Legumes! - Green Beans</p></div>
                     </div>
                 </div>
             </div>
